@@ -94,7 +94,7 @@ Things you may want to cover:
 | city                     | string    | null: false       |
 | address                  | text      | null: false       |
 | building                 | text      |                   |
-| phone_number             | integer   | null: false       |
+| phone_number             | string    | null: false       |
 | order                    | reference | foreign_key: true |
 
 ### Association
