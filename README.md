@@ -33,7 +33,7 @@ Things you may want to cover:
 | Column                  | Type   | Options                  |
 | ----------------------- | ------ | ------------------------ |
 | email                   | string | null: false, unique: true|
-| password                | string | null: false              |
+| encrypted_password      | string | null: false              |
 | name                    | string | null: false              |
 | last_name               | string | null: false              |
 | first_name              | string | null: false              |
