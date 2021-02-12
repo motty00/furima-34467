@@ -71,10 +71,10 @@ Things you may want to cover:
 
 ## orders テーブル
 
-| Column                 | Type          | Options     |
-| -----------------------| ------------- | ----------- |
-| user                   | references    |             |
-| item                   | references    |             |
+| Column                 | Type          | Options           |
+| -----------------------| ------------- | ----------------- |
+| user                   | references    | foreign_key: true |
+| item                   | references    | foreign_key: true |
 
 
 ### Association
