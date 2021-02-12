@@ -87,15 +87,15 @@ Things you may want to cover:
 
 ## addresses テーブル
 
-| Column                   | Type      | Options     |
-| ------------------------ | --------- | ----------- |
-| postal_code              | integer   | null: false |
-| prefecture_id            | integer   | null: false |
-| city                     | string    | null: false |
-| address                  | text      | null: false |
-| building                 | text      |             |
-| phone_number             | integer   | null: false |
-| order                    | reference |             |
+| Column                   | Type      | Options           |
+| ------------------------ | --------- | ----------------- |
+| postal_code              | integer   | null: false       |
+| prefecture_id            | integer   | null: false       |
+| city                     | string    | null: false       |
+| address                  | text      | null: false       |
+| building                 | text      |                   |
+| phone_number             | integer   | null: false       |
+| order                    | reference | foreign_key: true |
 
 ### Association
 
