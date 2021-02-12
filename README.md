@@ -92,8 +92,8 @@ Things you may want to cover:
 | postal_code              | string    | null: false       |
 | prefecture_id            | integer   | null: false       |
 | city                     | string    | null: false       |
-| address                  | text      | null: false       |
-| building                 | text      |                   |
+| address                  | string    | null: false       |
+| building                 | string    |                   |
 | phone_number             | string    | null: false       |
 | order                    | reference | foreign_key: true |
 
