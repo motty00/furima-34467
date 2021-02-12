@@ -30,16 +30,16 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column                  | Type   | Options     |
-| ----------------------- | ------ | ----------- |
-| email                   | string | null: false |
-| password                | string | null: false |
-| name                    | string | null: false |
-| last_name               | string | null: false |
-| first_name              | string | null: false |
-| last_name_kana          | string | null: false |
-| first_name_kana         | string | null: false |
-| birth_date              | date   | null: false |
+| Column                  | Type   | Options                  |
+| ----------------------- | ------ | ------------------------ |
+| email                   | string | null: false, unique: true|
+| password                | string | null: false              |
+| name                    | string | null: false              |
+| last_name               | string | null: false              |
+| first_name              | string | null: false              |
+| last_name_kana          | string | null: false              |
+| first_name_kana         | string | null: false              |
+| birth_date              | date   | null: false              |
 
 
 ### Association
