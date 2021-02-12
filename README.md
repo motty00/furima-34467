@@ -50,17 +50,17 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column                 | Type          | Options     |
-| ---------------------- | ------------- | ----------- |
-| name                   | string        | null: false |
-| info                   | text          | null: false |
-| category_id            | integer       | null: false |
-| status_id              | integer       | null: false |
-| shipping_fee_id        | integer       | null: false |
-| prefecture_id          | integer       | null: false |
-| scheduled_delivery_id  | integer       | null: false |
-| price                  | integer       | null: false |
-| user                   | references    |             |
+| Column                 | Type          | Options           |
+| ---------------------- | ------------- | ----------------- |
+| name                   | string        | null: false       |
+| info                   | text          | null: false       |
+| category_id            | integer       | null: false       |
+| status_id              | integer       | null: false       |
+| shipping_fee_id        | integer       | null: false       |
+| prefecture_id          | integer       | null: false       |
+| scheduled_delivery_id  | integer       | null: false       |
+| price                  | integer       | null: false       |
+| user                   | references    | foreign_key: true |
 
 ### Association
 
