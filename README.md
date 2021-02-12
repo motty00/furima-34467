@@ -52,7 +52,6 @@ Things you may want to cover:
 
 | Column                 | Type          | Options     |
 | ---------------------- | ------------- | ----------- |
-| image                  | ActiveStorage |             |
 | name                   | string        | null: false |
 | info                   | text          | null: false |
 | category_id            | integer       | null: false |
