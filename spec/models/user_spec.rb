@@ -14,6 +14,11 @@ RSpec.describe User, type: :model do
         @user.password_confirmation = 'hogehoge11'
         expect(@user).to be_valid
       end
+      it 'ユーザー本名は、全角（漢字・ひらがな・カタカナ）での入力が必須であること' do
+        @user.last_name = '山田'
+        @user.first_name = 'たろうタロウ'
+        expect(@user).to be_valid
+      end
     end
     context '新規登録できないとき' do
       it 'emailが空だと登録できない' do
@@ -82,6 +87,12 @@ RSpec.describe User, type: :model do
         @user.first_name_kana = 'ほげほげ'
         @user.valid?
         expect(@user.errors.full_messages).to include('First name kana is invalid')
+      end
+      it 'ユーザー本名は、全角（漢字・ひらがな・カタカナ）以外の入力では登録できない' do
+        @user.last_name = '12345@'
+        @user.first_name = '54321!'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Last name is invalid", "First name is invalid")
       end
       it 'birth_dateが空だと登録できない' do
         @user.birth_date = ''
