@@ -6,17 +6,20 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :scheduled_delivery
 
-  
-  validates :image, presence: true
-  validates :name, presence: true
-  validates :info, presence: true
-  validates :price, presence: true, inclusion: { in: 300..9999999 }
 
-  validates :category_id,              numericality: { other_than: 1 } 
-  validates :status_id,                numericality: { other_than: 1 } 
-  validates :shipping_fee_id,          numericality: { other_than: 1 } 
-  validates :prefecture_id,            numericality: { other_than: 1 } 
-  validates :scheduled_delivery_id,    numericality: { other_than: 1 } 
+  with_options presence: true do
+    validates :image
+    validates :name
+    validates :info
+    validates :price, inclusion: { in: 300..9999999 }
+  end
+  with_options numericality: { other_than: 1 } do
+    validates :category_id
+    validates :status_id
+    validates :shipping_fee_id
+    validates :prefecture_id
+    validates :scheduled_delivery_id
+  end
 
   belongs_to :user
   has_one    :order
