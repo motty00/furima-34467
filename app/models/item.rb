@@ -7,13 +7,17 @@ class Item < ApplicationRecord
   belongs_to :scheduled_delivery
 
   
-  validates :title, :text, presence: true
+  validates :image, presence: true
+  validates :name, presence: true
+  validates :info, presence: true
+  validates :price, presence: true
 
-  validates :category_id,     numericality: { other_than: 1 } 
-  validates :status_id,       numericality: { other_than: 1 } 
-  validates :shipping_fee_id, numericality: { other_than: 1 } 
-  validates :prefecture_id,   numericality: { other_than: 1 } 
-  validates :scheduled_id,    numericality: { other_than: 1 } 
+
+  validates :category_id,              numericality: { other_than: 1 } 
+  validates :status_id,                numericality: { other_than: 1 } 
+  validates :shipping_fee_id,          numericality: { other_than: 1 } 
+  validates :prefecture_id,            numericality: { other_than: 1 } 
+  validates :scheduled_delivery_id,    numericality: { other_than: 1 } 
 
   belongs_to :user
   has_one    :order
