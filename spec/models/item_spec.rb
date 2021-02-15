@@ -50,30 +50,30 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is not included in the list')
       end
-      it 'category_idが空だと登録できない' do
-        @item.category_id = ''
+      it 'category_idが1だと登録できない' do
+        @item.category_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Category is not a number')
+        expect(@item.errors.full_messages).to include("Category must be other than 1")
       end
-      it 'status_idが空だと登録できない' do
-        @item.status_id = ''
+      it 'status_idが1だと登録できない' do
+        @item.status_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Status is not a number')
+        expect(@item.errors.full_messages).to include("Status must be other than 1")
       end
-      it 'shipping_fee_idが空だと登録できない' do
-        @item.shipping_fee_id = ''
+      it 'shipping_fee_idが1だと登録できない' do
+        @item.shipping_fee_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Shipping fee is not a number')
+        expect(@item.errors.full_messages).to include('Shipping fee must be other than 1')
       end
-      it 'prefecture_idが空だと登録できない' do
-        @item.prefecture_id = ''
+      it 'prefecture_idが1だと登録できない' do
+        @item.prefecture_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Prefecture is not a number')
+        expect(@item.errors.full_messages).to include('Prefecture must be other than 1')
       end
-      it 'scheduled_delivery_idが空だと登録できない' do
-        @item.scheduled_delivery_id = ''
+      it 'scheduled_delivery_idが1だと登録できない' do
+        @item.scheduled_delivery_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Scheduled delivery is not a number')
+        expect(@item.errors.full_messages).to include('Scheduled delivery must be other than 1')
       end
     end
   end
