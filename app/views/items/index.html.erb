@@ -154,6 +154,25 @@
         <% end %>
       </li>
       <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+      <% @items.each do |item| %>
+        <li class="list">
+         <%= link_to "#" do %>
+            <%= image_tag item.image, class: "imen-imag" %>
+            <div class="item-info">
+              <h3 class="item-name">
+                <%= item.name %>
+              </h3>
+             <div class="item-price">
+               <span><%= "#{item.price}円" %><br><%= item.shipping_fee.name %></span>
+                 <div class='star-btn'>
+                   <%= image_tag "star.png", class:"star-icon" %>
+                   <span class='star-count'>0</span>
+                 </div>
+              </div>
+           </div>
+         <% end %>
+        </li>  
+      <% end %>
 
       <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
       <%# 商品がある場合は表示されないようにしましょう %>
