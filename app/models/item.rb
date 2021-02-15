@@ -6,12 +6,11 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :scheduled_delivery
 
-
   with_options presence: true do
     validates :image
     validates :name
     validates :info
-    validates :price, inclusion: { in: 300..9999999 }
+    validates :price, inclusion: { in: 300..9_999_999 }
   end
   with_options numericality: { other_than: 1 } do
     validates :category_id
@@ -23,9 +22,5 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_one    :order
-
   has_one_attached :image
-
-
 end
-
