@@ -42,11 +42,9 @@ class ItemsController < ApplicationController
   end
 
   def set_edit
-    if current_user.id != @item.user_id
-      redirect_to root_path
-    end
+    redirect_to root_path if current_user.id != @item.user_id
   end
-  
+
   def set_update
     if @item.update(item_params)
       redirect_to item_path
@@ -54,5 +52,4 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
-
 end
