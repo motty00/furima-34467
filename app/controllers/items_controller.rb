@@ -18,6 +18,9 @@ class ItemsController < ApplicationController
     end
   end
 
+  def shoe
+  end
+
   private
 
   def item_params
