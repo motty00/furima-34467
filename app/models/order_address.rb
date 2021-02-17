@@ -3,7 +3,7 @@ class OrderAddress
   attr_accessor :postal_code, :prefecture_id, :city, :address, :building, :phone_number, :order_id, :user_id, :item_id
 
   validates :postal_code,       presence: true #inclusion: { in: - }
-  validates :prefecture_id,     presence: true
+  validates :prefecture_id,     numericality: { other_than: 1 }
   validates :city,              presence: true
   validates :address,           presence: true
   validates :phone_number,      presence: true, numericality: { with: /\A\d{10,11}\z/ }
