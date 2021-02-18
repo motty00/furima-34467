@@ -2,7 +2,7 @@ class OrderAddress
   include ActiveModel::Model
   attr_accessor :postal_code, :prefecture_id, :city, :address, :building, :phone_number, :order_id, :user_id, :item_id
 
-  validates :postal_code,       presence: true #inclusion: { in: - }
+  validates :postal_code,       presence: true, format: {with: /\A\d{3}[-]\d{4}$|^\d{3}[-]\d{2}$|^\d{3}\z/ }
   validates :prefecture_id,     numericality: { other_than: 1 }
   validates :city,              presence: true
   validates :address,           presence: true
