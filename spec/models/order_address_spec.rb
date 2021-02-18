@@ -6,12 +6,19 @@ RSpec.describe OrderAddress, type: :model do
   describe '購入情報登録' do
     context '購入情報が登録できるとき' do
       it 'postal_code、prefecture_id、city、address、phone_numberが存在すれば登録できる' do
+        expect(@address).to be_valid
       end
       it 'postal_codeには「-]ハイフンが存在すれば登録できる' do
+        @address.postal_code = "123-1234"
+        expect(@address).to be_valid
       end
       it 'buildingは存在しなくても登録できる' do
+        @address.building = ""
+        expect(@address).to be_valid
       end
       it 'phone_numberは11桁以内の数字であれば登録できる' do
+        @address.phone_number = "0901234123"
+        expect(@address).to be_valid
       end
     end
 
