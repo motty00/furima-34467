@@ -6,9 +6,8 @@ FactoryBot.define do
     address                 { '1542-3' }
     building                { '柳ビル103' }
     phone_number            { Faker::Number.leading_zero_number(digits: 11) }
-
     token                   { 'tok_abcdefghijk00000000000000000' }
-    user_id                 { '2' }
-    item_id                 { '3' }
+    user_id                 {FactoryBot.build(:user)}
+    item_id                 {FactoryBot.build(:item)}
   end
 end
