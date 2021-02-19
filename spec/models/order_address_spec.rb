@@ -1,7 +1,9 @@
 require 'rails_helper'
 RSpec.describe OrderAddress, type: :model do
   before do
-    @address = FactoryBot.build(:order_address)
+    user_id = FactoryBot.build(:user)
+    item_id = FactoryBot.build(:user)
+    @address = FactoryBot.build(:order_address, user_id: user_id, item_id: item_id)
   end
   describe '購入情報登録' do
     context '購入情報が登録できるとき' do
