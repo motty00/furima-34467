@@ -2,7 +2,8 @@ require 'rails_helper'
 RSpec.describe OrderAddress, type: :model do
   before do
     user_id = FactoryBot.create(:user)
-    item_id = FactoryBot.create(:user)
+    item_id = FactoryBot.create(:item)
+    sleep(0.5)
     @address = FactoryBot.build(:order_address, user_id: user_id.id, item_id: item_id.id)
   end
   describe '購入情報登録' do
@@ -31,7 +32,7 @@ RSpec.describe OrderAddress, type: :model do
         expect(@address.errors.full_messages).to include("Postal code can't be blank", 'Postal code is invalid')
       end
       it 'postal_codeに「-」ハイフンが存在しないと登録できない' do
-        @address.postal_code = '1231234'
+        @address.postal_code = '12312345'
         @address.valid?
         expect(@address.errors.full_messages).to include('Postal code is invalid')
       end
