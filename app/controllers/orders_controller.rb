@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :item_find, only: [:index, :create]
+  before_action :set_access, only: [:index, :create]
 
   def index
-    redirect_to root_path if current_user.id == @item.user_id || Order.exists?(item_id: @item.id)
     @order_address = OrderAddress.new
   end
 
@@ -29,6 +29,11 @@ class OrdersController < ApplicationController
   def item_find
     @item = Item.find(params[:item_id])
   end
+
+  def set_access
+    redirect_to root_path if current_user.id == @item.user_id || Order.exists?(item_id: @item.id)
+  end
+
 
   def pay_item
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
