@@ -34,7 +34,6 @@ class OrdersController < ApplicationController
     redirect_to root_path if current_user.id == @item.user_id || Order.exists?(item_id: @item.id)
   end
 
-
   def pay_item
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
